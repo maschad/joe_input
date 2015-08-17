@@ -64,7 +64,7 @@ table tr th { color: #688a7e;}
     padding-top: 10px;
 }
 .lite{
-    color: #00CC33 !important;
+    color: #00a0df !important;
 }
 
 /*login page*/
@@ -530,7 +530,7 @@ ul.sidebar-menu li.active a i {
 a.logo {
     font-size: 22px;
     font-weight: 300;
-    color: #B80000;
+    color: #fed189;
     float: left;
     margin-top: 15px;
     text-transform: uppercase;
@@ -587,7 +587,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     height: 18px;
     text-align: center;
     padding: 3px 5px;
-    background: #00CC33;
+    background: #00a0df;
     font-weight: 400;
 }
 .badge {    
@@ -596,7 +596,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     height: 18px;
     text-align: center;
     padding: 3px 5px;
-    background: #00CC33;
+    background: #00a0df;
 }
 
 .dropdown-menu.extended {
@@ -1978,7 +1978,7 @@ div[data-role="editor-toolbar"] {
 }
 
 .badge.bg-important {
-    background: #00CC33 ;
+    background: #00a0df;
     font-family: 'Lato', sans-serif;
     font-size: 11px;
 }

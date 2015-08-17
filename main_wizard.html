@@ -13,12 +13,15 @@
     <link href="css/smart_wizard_vertical.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery.smartWizard.js"></script>
 
+	<!--mailcheck initializaition -->
+ 	<script src="mailcheck.min.js"></script>
+
 
     <!-- Initialize smart wizard -->
     <script type="text/javascript">
       $(document).ready(function() {
           // Initialize Smart Wizard with ajax content 
-             $('#wizard').smartWizard({contentURL:'services/ajaxcontents.php'});
+             $('#wizard').smartWizard({transitionEffect:'slideleft',onLeaveStep:leaveAStepCallback,onFinish:onFinishCallback,enableFinishButton:true});
       }); 
     </script>
 
@@ -33,7 +36,6 @@
 
 	    function leaveAStepCallback(obj, context){
 	        alert("Leaving step " + context.fromStep + " to go to step " + context.toStep);
-	        if()
 	        return validateSteps(context.fromStep); // return false to stay on step and true to continue navigation 
 	    }
 
