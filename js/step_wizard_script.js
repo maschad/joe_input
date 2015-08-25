@@ -5,10 +5,24 @@ $( function () {
 		    headerTag: "h3",
 		    bodyTag: "fieldset",
 		    transitionEffect: "slideLeft",
-		    stepsOrientation: "vertical",
+		    loadingTemplate: '<span class="spinner"></span> #text#',
+		    saveState:true,
+		    /*Behaviours*/
+		     /* Behaviour */
+		    autoFocus: false,
+		    enableAllSteps: false,
+		    enableKeyNavigation: true,
+		    enablePagination: true,
+		    suppressPaginationOnFocus: true,
+		    enableContentCache: true,
+		    enableCancelButton: true,
+		    enableFinishButton: true,
+		    preloadContent: false,
+		    showFinishButtonAlways: false,
+		    forceMoveForward: false,
 		    onStepChanging: function (event, currentIndex, newIndex)
 		    {
-		        // Allways allow previous action even if the current form is not valid!
+		        // Always allow previous action even if the current form is not valid!
 		        if (currentIndex > newIndex)
 		        {
 		            return true;
