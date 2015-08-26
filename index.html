@@ -64,12 +64,20 @@
 		    <fieldset>
 		        <legend>Account Information</legend>
 		 
-		        <label for="userName-2">Company Name *<span class="required"></span></label>
-		        <input id="userName-2" name="company" type="text" class="required" class="form-control"/>
-		        <label for="password-2">Customer Contact *</label>
-		        <input id="password-2" name="contact" type="text" class="required">
-		        <label for="email-2">E-mail address *</label>
-		        <input id="email-2" name="email" type="email" class="required email">
+		        <label for="company">Company Name *<span class="required"></span></label>
+		        <input id="company" name="company" type="text" class="required" class="form-control"/>
+		        <label for="contact">Customer Contact *</label>
+		        <input id="contact" name="contact" type="text" class="required">
+		        <label for="email">E-mail address *</label>
+		        <input id="email" name="email" type="email" class="required email">
+		        <label for="address" name= "address" type="text">Address</label>
+		        <input id="address" name="address" type="text">
+		        <label for="secondary" name= "secondary" type="text">Secondary Address</label>
+		        <input id="secondary" name="secondary" type="text">
+		        <label for="third" name= "third" type="text">Third Address</label>
+		        <input id="third" name="third" type="text">
+		        <label for="telephone" name= "telephone" type="number">Telephone No.</label>
+		        <input id="telephone" name="telephone" type="number">
 		        <p>(*) Mandatory</p>
 		    </fieldset>
 		 
@@ -104,6 +112,11 @@
 		        <input id="acceptTerms-2" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
 		    </fieldset>
 			</form>
+			<div class="form-group">
+          		<div class="col-lg-offset-2 col-lg-10">
+              		<button class="btn btn-primary" type="submit" action = "php/action_page.php">Save</button>
+  				</div>
+			</div>
 		</div>
 	</section>
 </body>
