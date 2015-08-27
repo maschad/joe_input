@@ -31,8 +31,8 @@
     <link href="css/elegant-icons-style.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom styles -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet"/>
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/style-responsive.css" rel="stylesheet"/>
 
 
 </head>
@@ -90,17 +90,10 @@
 		    <fieldset>
 		        <legend>Cloud Storage</legend>
 		        <label for="ex6"> Choose amount of GB </label>
-				<input id="ex6" type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="0" class="required"   data-slider-ticks-labels='["0GB", "100GB", "200GB", "300GB", "400GB"]'  data-slider-ticks="[0, 100, 200, 300, 400]" /> 
+		        <div>
+					<input id="ex6"  data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="0" class="required"   data-slider-ticks-labels='["0GB", "100GB", "200GB", "300GB", "400GB"]'  data-slider-ticks="[0, 100, 200, 300, 400]"/> 
+				</div>
 				<span id="ex6CurrentSliderValLabel">Price:$<span id="ex6SliderVal"></span></span>
-
-				<!-- Data Slider Script -->
-				<script >
-					$("#ex6").slider();
-					$("#ex6").on("slide", function(slideEvt) {
-						$("#ex6SliderVal").text(slideEvt.value*25);
-					});
-				</script>
-
 		    </fieldset>
 		 
 		    <h3>Warning</h3>
@@ -123,5 +116,17 @@
   				</div>
 			</div>
 	</section>
+	<!-- Data Slider Script -->
+	<script type ="text/javascript" >
+	$(document).ready(function (){
+		$("#ex6").slider();
+		$("#ex6").on("slide", function(slideEvt) {
+			$("#ex6SliderVal").text(slideEvt.value*25);
+		});
+	});
+	</script>
 </body>
+
+
+
 </html>
