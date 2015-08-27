@@ -63,6 +63,10 @@ $( function () {
 		    onFinished: function (event, currentIndex)
 		    {
 		        alert("Submitted!");
+		    },
+		    onCanceled: function(event){
+		    	saveState:false;
+    			return currentIndex;
 		    }
 		}).validate({
 		    errorPlacement: function errorPlacement(error, element) { element.before(error); },

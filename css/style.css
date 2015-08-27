@@ -4109,7 +4109,7 @@ table.sliders tr td {
 }
 
 .ui-slider-horizontal {
-    height: 8px !important;
+    height: 5px !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -4135,7 +4135,7 @@ table.sliders tr td {
 .ui-slider .ui-slider-handle {
     cursor: default;
     height: 1.6em;
-    position: absolute;
+    position: relative;
     width: 1.6em;
     z-index: 2;
 }
