@@ -14,7 +14,6 @@
 	<!-- JQuery Slider cripts-->
 	<script src= "js/bootstrap-slider.min.js" type="text/javascript"></script>
 	
-	
 	<!-- Step Wizard CSS -->
 	<link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -91,14 +90,14 @@
 		        <label for="telephone" name= "telephone" type="number">Telephone No.</label>
 		        <input id="telephone" name="telephone" type="number">
 		        <p>(*) Mandatory</p>
-		    </fieldset>
-		 -->
+		    </fieldset>-->
+		 
 		    <h3>Cloud Storage</h3>
 		    <fieldset>
 		        <legend>Cloud Storage</legend>
 		        <label for="ex6"> Choose amount of GB </label>
 		        <div>
-					<input id="ex6"  data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="0" class="required"   data-slider-ticks-labels='["0GB", "100GB", "200GB", "300GB", "400GB"]'  data-slider-ticks="[0, 100, 200, 300, 400]"/> 
+					<input id="ex6"  data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="100" class="required"   data-slider-ticks-labels='["0GB", "100GB", "200GB", "300GB", "400GB"]'  data-slider-ticks="[0, 100, 200, 300, 400]"/> 
 				</div>
 				<div>
 					<span id="ex6CurrentSliderValLabel">Price:$<span id="ex6SliderVal"></span></span>
@@ -139,15 +138,34 @@
   				</div>
 			</div>
 	</section>
+	
+
 	<!-- Data Slider Script -->
 	<script type ="text/javascript" >
 	$(document).ready(function (){
-		$("#ex6").slider();
-		$("#ex6").on("slide", function(slideEvt) {
-			$("#ex6SliderVal").text(slideEvt.value*25);
-		});
+
+		//AJAX call for data retrieval to store value in value
+		var xmlhttp=new XMLHttpRequest();
+	    xmlhttp.onload = function() {
+			var value = parseFloat(this.responseText);
+			alert(value);
+			//slider functions
+			$("#ex6").slider();
+			$("#ex6").on("slide", function(slideEvt) {
+				slideEvt.value *= value;
+				$("#ex6SliderVal").text(slideEvt.value);
+			
+			});
+		};
+
+		//send the AJAX request
+		xmlhttp.open("GET","php/getprices.php",true);
+	    xmlhttp.send(); 
+
+		
 	});
 	</script>
+
 </body>
 
 
