@@ -46,7 +46,7 @@
   <!-- container section start -->
   <section id="container" class="">
       <!--header start-->
-      <header class="header dark-bg">
+      <header class="header white-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
             </div>
@@ -66,10 +66,11 @@
                 </ul>
                 <!--  search form end -->                
             </div>
-		</header>
-	</section>
-	<section class="panel">
+	</header>
+</section>
+<section class="panel">
 			<form class="form-validate form-horizonal" id="input-form" action="#">
+			<!--
 		    <h3>Account</h3>
 		    <fieldset id="account_info">
 		        <legend>Account Information</legend>
@@ -90,7 +91,7 @@
 		        <input id="telephone" name="telephone" type="number">
 		        <p>(*) Mandatory</p>
 		    </fieldset>
-		 
+		 -->
 		    <h3>Cloud Storage</h3>
 		    <fieldset >
 		        <legend>Cloud Storage</legend>
@@ -98,8 +99,8 @@
 		        <div>
 					<input id="ex6"  data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="100" class="required"   data-slider-ticks-labels='["0GB", "100GB", "200GB", "300GB", "400GB"]'  data-slider-ticks="[0, 100, 200, 300, 400]"/> 
 					<div>
-						<label for="replication">Replication Required<span class="required"></span></label>
-			        	<input id="replication" name="company" type="checkbox" class="required" class="form-control"/>
+						<label for="replication">Replication Required<span></span></label>
+			        	<input id="replication" name="company" type="checkbox"/>
 		        	</div>
 				</div>
 				<div>
@@ -107,12 +108,12 @@
 				</div>
 				 <div align="right">
 				 	<h2>Digicel Services</h2>
-		        	<table data-url="results.json" data-height="400" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true">
+		        	<table data-url="data/results.json" data-height="400" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true">
 				        <thead>
 				            <tr>
-				            	<th>Item</th>
-				                <th>Standard</th>
-				                <th>Professional</th>
+				            	<th data-field="item" data-align="right" data-sortable="true">Item</th>
+				                <th data-field="standard" data-align="centre" data-sortable="true">Standard</th>
+				                <th data-field="professional" data-sortable="true">Professional</th>
 				            </tr>
 				        </thead>
 			        </table>
@@ -136,9 +137,23 @@
 	</section>
 	
 
-	<!-- Data Slider Script -->
+	<!-- Data Slider Script as well as load the json file for the table -->
 	<script type ="text/javascript" >
 	$(document).ready(function (){
+
+		//call the php file to create the json file
+		$.ajax(
+	    {
+	        post: "POST",
+	        url: "php/table.php",
+	        data: { language: "EN"}
+	    }).done(function() 
+	    {
+	        alert(this.responseText);
+	    }).fail(function() 
+	    {
+	        alert("failed");
+	    });
 
 		//AJAX call for data retrieval to store value in value
 		var xmlhttp=new XMLHttpRequest();
@@ -163,7 +178,7 @@
 		
 	});
 	</script>
-
+	 
 </body>
 
 

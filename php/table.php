@@ -1,21 +1,20 @@
 <?php
-	$sql=mysql_query("select * from pricing_schedule limit 20"); 
+	require 'db_connect.php';
 
-	$response = array();
-	$posts = array();
-	$result=mysql_query($sql);
-	while($row=mysql_fetch_array($result)) 
-	{ 
-	$title=$row['title']; 
-	$url=$row['url']; 
+	$sql=mysqli_query("select * from cloud_services"); 
+	$records = array();
 
-	$posts[] = array('title'=> $title, 'url'=> $url);
+	 //Loop through all our records and add them to our array
+	while($r = mysqli_fetch_assoc($sql))
+    {
+        $records[] = $r;        
+    }
 
-	} 
+    //Output the data as JSON
+    $json = json_encode($records);   
 
-	$response['posts'] = $posts;
-
-	$fp = fopen('results.json', 'w');
-	fwrite($fp, json_encode($response));
+    //writing to file
+	$fp = fopen('/price_calculation_digi/data/results.json', 'w');
+	fwrite($fp, $json);
 	fclose($fp);
 ?>
