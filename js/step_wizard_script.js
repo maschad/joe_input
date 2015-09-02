@@ -6,9 +6,9 @@ $( function () {
 		    bodyTag: "fieldset",
 		    transitionEffect: "slideLeft",
 		    loadingTemplate: '<span class="spinner"></span> #text#',
-		    saveState:true,
-		    /*Behaviours*/
+		
 		     /* Behaviour */
+		    saveState: true,
 		    autoFocus: false,
 		    enableAllSteps: false,
 		    enableKeyNavigation: true,
@@ -26,11 +26,6 @@ $( function () {
 		        if (currentIndex > newIndex)
 		        {
 		            return true;
-		        }
-		        // Forbid next action on "Warning" step if the user is to young
-		        if (newIndex === 3 && Number($("#age-2").val()) < 18)
-		        {
-		            return false;
 		        }
 		        // Needed in some cases if the user went back (clean up)
 		        if (currentIndex < newIndex)
@@ -62,6 +57,22 @@ $( function () {
 		    },
 		    onFinished: function (event, currentIndex)
 		    {
+		    	var values = $("#account_info").serialize();
+		    	$.ajax({
+		    		url: 'php/action_page.php',
+		    		type: 'GET',
+		    		data: values,
+		    	})
+		    	.done(function() {
+		    		console.log("success");
+		    	})
+		    	.fail(function() {
+		    		console.log("error");
+		    	})
+		    	.always(function() {
+		    		console.log("complete");
+		    	});
+		    	
 		        alert("Submitted!");
 		    },
 		    onCanceled: function(event){
