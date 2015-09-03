@@ -140,21 +140,6 @@
 	<!-- Data Slider Script as well as load the json file for the table -->
 	<script type ="text/javascript" >
 	$(document).ready(function (){
-
-		//call the php file to create the json file
-		$.ajax(
-	    {
-	        post: "POST",
-	        url: "php/table.php",
-	        data: { language: "EN"}
-	    }).done(function() 
-	    {
-	        alert(this.responseText);
-	    }).fail(function() 
-	    {
-	        alert("failed");
-	    });
-
 		//AJAX call for data retrieval to store value in value
 		var xmlhttp=new XMLHttpRequest();
 	    xmlhttp.onload = function() {
@@ -178,7 +163,6 @@
 		
 	});
 	</script>
-	 
 </body>
 
 

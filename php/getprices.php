@@ -1,11 +1,7 @@
 <?php
 
-$con = mysqli_connect('localhost','root','','joe_database');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
+require 'db_connect.php';
 
-mysqli_select_db($con,"ajax_demo");
 $sql="SELECT * FROM cloud_services WHERE item_name = 'storage' ";
 $result = mysqli_query($con,$sql);
 

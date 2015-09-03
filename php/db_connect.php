@@ -1,6 +1,10 @@
 <?php
 
-	$link = mysqli_connect("localhost","root"," ")  or die("failed to connect to server !!");
-	mysqli_select_db($link,"joe_database");
+$con = mysqli_connect('localhost','root','','joe_database');
+if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
+}
+
+mysqli_select_db($con,"joe_database");
 
 ?>
