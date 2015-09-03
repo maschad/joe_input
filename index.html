@@ -108,15 +108,17 @@
 				</div>
 				 <div align="right">
 				 	<h2>Digicel Services</h2>
-		        	<table data-url="data/results.json" data-height="400" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true">
-				        <thead>
-				            <tr>
-				            	<th data-field="item" data-align="right" data-sortable="true">Item</th>
-				                <th data-field="standard" data-align="centre" data-sortable="true">Standard</th>
-				                <th data-field="professional" data-sortable="true">Professional</th>
-				            </tr>
-				        </thead>
-			        </table>
+				 	<div class="bootstrap-table">
+			        	<table data-url="data/results.json" data-height="299" data-toggle="table" data-cache="false">
+					        <thead>
+					            <tr>
+					            	<th data-field="item_name" data-align="right">Item</th>
+					                <th data-field="item_price" data-align="centre">Price</th>
+					                <th data-field="item_quality">Quality</th>
+					            </tr>
+					        </thead>
+				        </table>
+			       </div>
 		        </div>
 		    </fieldset>
 		 
