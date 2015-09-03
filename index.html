@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Advanced Form </title>
-
+	
 
 	<!-- Steps Wizard Scripts -->		 
 	<script src= "js/jquery.js" type="text/javascript"></script>
@@ -20,19 +20,23 @@
     <link rel="stylesheet" href="css/jquery.steps.css"> 
 
     <!-- Bootstrap Table -->
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-table.js"></script>
     <script src="js/bootstrap-table-zh-CN.js"></script>
-
-
+    <script src="js/bootstrap-table-editable.js" type="text/javascript"></script>
+    <script src="js/bootstrap-editable.js" type="text/javascript"></script>
 
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css"> 
     <link rel="stylesheet" href="css/bootstrap-table.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-editable.css">
+
     <!-- bootstrap theme -->
     <link href="css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
+
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
@@ -106,19 +110,18 @@
 				<div>
 					<span id="ex6CurrentSliderValLabel">Price:$<span id="ex6SliderVal"></span></span>
 				</div>
-				 <div align="right">
+				 <div>
 				 	<h2>Digicel Services</h2>
-				 	<div class="bootstrap-table">
-			        	<table data-url="data/results.json" data-height="299" data-toggle="table" data-cache="false">
-					        <thead>
-					            <tr>
-					            	<th data-field="item_name" data-align="right">Item</th>
-					                <th data-field="item_price" data-align="centre">Price</th>
-					                <th data-field="item_quality">Quality</th>
-					            </tr>
-					        </thead>
-				        </table>
-			       </div>
+		        	<table  id="table" data-url="data/results.json" data-toggle="table">
+				        <thead>
+				            <tr>
+				            	<th data-field="item_name" >Item</th>
+				                <th data-field="item_price" >Price</th>
+				                <th data-field="item_quality" >Quality</th>
+				                <th id="item_quantity" data-field="item_quantity" data-editable="true">Quantity</th>
+				            </tr>
+				        </thead>
+			        </table>
 		        </div>
 		    </fieldset>
 		 
@@ -142,6 +145,7 @@
 	<!-- Data Slider Script as well as load the json file for the table -->
 	<script type ="text/javascript" >
 	$(document).ready(function (){
+		
 		//AJAX call for data retrieval to store value in value
 		var xmlhttp=new XMLHttpRequest();
 	    xmlhttp.onload = function() {
